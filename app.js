@@ -31,11 +31,15 @@ document.getElementById('key-pad').addEventListener('click', function (event) {
 
 function verifyPin() {
   const pin = document.getElementById('display-pin').value;
-  const typeNumber = document.getElementById('typed-numbers').value;
-  if (pin == typeNumber) {
-    console.log('oppps');
+  const typeNumbers = document.getElementById('typed-numbers').value;
+  const succesMessage = document.getElementById('notify-succes');
+  const failError = document.getElementById('notify-faild');
+  if (pin == typeNumbers) {
+    succesMessage.style.display = 'block';
+    failError.style.display = 'none';
   }
   else {
-    console.log('wong number');
+    succesMessage.style.display = 'none';
+    failError.style.display = 'block';
   }
 }
